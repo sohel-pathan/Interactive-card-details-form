@@ -10,6 +10,17 @@ const cvcNumber = document.getElementById("cvc__number");
 const continueBtn = document.getElementById("continue__btn");
 const completeStatus = document.getElementById("complete__stat");
 
+// deafault card details
+const defaultCardDeatails = () => {
+  holderName.textContent = "jane appleseed"
+  ccNumber.textContent = "0000 0000 0000 0000"
+  ccExpMonth.textContent = "00"
+  ccExpYear.textContent = "00"
+  cvcNumber.textContent = "000"
+}
+// set default card details 
+defaultCardDeatails()
+
 // Input Event listner on form
 form.addEventListener("input", (e) => {
   // target = current focused input
@@ -157,15 +168,19 @@ form.addEventListener("submit", (e) => {
     form.classList.add("display__none");
     // show complete states
     completeStatus.classList.add("show");
+    // reset form
+    form.reset()
   }
 });
 
 // contiue button for complete state
 continueBtn.addEventListener("click", () => {
-  // submit form
-  form.submit();
+  // set default card details 
+  defaultCardDeatails()
+  
   // show form
   form.classList.remove("display__none");
+  
   // hide complete state
   completeStatus.classList.remove("show");
 });
