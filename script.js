@@ -155,7 +155,6 @@ form.addEventListener("submit", (e) => {
   if (input === 5) {
     // hide form
     form.classList.add("display__none");
-   
     // show complete states
     completeStatus.classList.add("show");
   }
@@ -164,7 +163,7 @@ form.addEventListener("submit", (e) => {
 // contiue button for complete state
 continueBtn.addEventListener("click", () => {
   // submit form
-  form.reset();
+  form.submit();
   // show form
   form.classList.remove("display__none");
   // hide complete state
