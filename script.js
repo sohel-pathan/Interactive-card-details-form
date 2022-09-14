@@ -158,15 +158,13 @@ form.addEventListener("submit", (e) => {
    
     // show complete states
     completeStatus.classList.add("show");
-    
-     form.reset()
   }
 });
 
 // contiue button for complete state
 continueBtn.addEventListener("click", () => {
   // submit form
-  form.submit();
+  form.reset();
   // show form
   form.classList.remove("display__none");
   // hide complete state
