@@ -155,8 +155,11 @@ form.addEventListener("submit", (e) => {
   if (input === 5) {
     // hide form
     form.classList.add("display__none");
+   
     // show complete states
     completeStatus.classList.add("show");
+    
+     form.reset()
   }
 });
 
