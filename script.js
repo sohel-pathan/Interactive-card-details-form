@@ -147,8 +147,8 @@ form.addEventListener("submit", (e) => {
   // check card expiry year
   if (cardYear.value < 1) {
     setError(cardYear, "Can't be blank");
-  } else {
-    setSuccess(cardYear);
+  }else{
+   setSuccess(cardYear);
     input++;
   }
 
@@ -156,7 +156,7 @@ form.addEventListener("submit", (e) => {
   if (cvcNumber.value.length < 1) {
     setError(cvcNumber, `Can't be blank`);
   } else if (cvcNumber.value.length < 3) {
-    setError(cvcNumber, `Enter correct cvc number`);
+    setError(cvcNumber, `CVC number must be 3 digit`);
   } else {
     setSuccess(cvcNumber);
     input++;
