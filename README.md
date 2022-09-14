@@ -2,6 +2,8 @@
 
 ![Design preview for the Interactive card details form coding challenge](./design/desktop-preview.jpg)
 
+![Design preview for the Interactive card details form coding challenge](./design/desktop-preview1.png)
+
 ## Welcome! 👋
 
 Thanks for checking out this front-end coding challenge.
@@ -25,20 +27,11 @@ Your users should be able to:
 - View the optimal layout depending on their device's screen size
 - See hover, active, and focus states for interactive elements on the page
 
-Want some support on the challenge? [Join our Slack community](https://www.frontendmentor.io/slack) and ask questions in the **#help** channel.
-
 ### Expected behaviour
 
 - Update the details on the card as the user fills in the fields
 - Validate the form fields when the form is submitted
 - If there are no errors, display the completed state
 - Reset the form when the user clicks "Continue" on the completed state
-
-
-## Got feedback for us?
-
-We love receiving feedback! We're always looking to improve our challenges and our platform. So if you have anything you'd like to mention, please email hi[at]frontendmentor[dot]io.
-
-This challenge is completely free. Please share it with anyone who will find it useful for practice.
 
 **Have fun building!** 🚀
