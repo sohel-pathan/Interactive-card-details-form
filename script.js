@@ -127,7 +127,9 @@ form.addEventListener("submit", (e) => {
   }
 
   // check card number
-  if (cardNumber.value.length !== 19) {
+  if(cardNumber.value.length < 1){
+    setError(cardNumber, "Can't be blank");
+  }else if (cardNumber.value.length >= 1 || cardNumber.value.length !== 19) {
     setError(cardNumber, "Card number must be 16 digit");
   } else {
     setSuccess(cardNumber);
@@ -156,7 +158,7 @@ form.addEventListener("submit", (e) => {
   if (cvcNumber.value.length < 1) {
     setError(cvcNumber, `Can't be blank`);
   } else if (cvcNumber.value.length < 3) {
-    setError(cvcNumber, `CVC number must be 3 digit`);
+    setError(cvcNumber, `CVC must be 3 digit`);
   } else {
     setSuccess(cvcNumber);
     input++;
