@@ -129,7 +129,7 @@ form.addEventListener("submit", (e) => {
   // check card number
   if(cardNumber.value.length < 1){
     setError(cardNumber, "Can't be blank");
-  }else if (cardNumber.value.length >= 1 || cardNumber.value.length !== 19) {
+  }else if (cardNumber.value.length < 19) {
     setError(cardNumber, "Card number must be 16 digit");
   } else {
     setSuccess(cardNumber);
