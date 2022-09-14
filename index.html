@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- displays site properly based on user's device -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- favicon -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <!-- Style__Sheet -->
+    <link rel="stylesheet" href="./style.css" />
+
+    <!-- javascript -->
+    <script defer src="./script.js"></script>
+
+    <!-- title -->
+    <title>Frontend Mentor | Interactive card details form</title>
+  </head>
+  <body>
+    <!-- ======================= -->
+    <!--     main container      -->
+    <!-- ======================= -->
+    <div class="container">
+      <!-- left handside container for cards and cardholder details -->
+      <div class="left__container">
+        <!-- ============================================= -->
+        <!-- card front image and details -->
+        <!-- ============================================= -->
+        <div class="cc__front cc__img_container">
+          <!-- card front image -->
+          <img class="card" src="./images/bg-card-front.png" alt="" />
+          <!-- card branding logo -->
+          <div class="p__absolute cc__branding">
+            <img src="./images/card-logo.svg" alt="" srcset="" />
+          </div>
+          <!-- card holder name -->
+          <div class="p__absolute cc__holder">
+            <p id="cc__name">jane appleseed</p>
+          </div>
+          <!-- card number -->
+          <div class="p__absolute cc__number">
+            <p id="cc__number">0000 0000 0000 0000</p>
+          </div>
+          <!-- card expiry date and month -->
+          <div class="p__absolute cc__date">
+            <p>
+              <span id="cc__exp_month">00</span>/
+              <span id="cc__exp_year">00</span>
+            </p>
+          </div>
+        </div>
+        <!-- ===================================== -->
+        <!--     card back image and cvc number   -->
+        <!-- ==================================== -->
+        <div class="cc__back cc__img_container">
+          <img class="card" src="./images/bg-card-back.png" alt="" />
+          <!-- card cvc number -->
+          <div class="p__absolute cvc__number">
+            <p id="cvc__number">000</p>
+          </div>
+        </div>
+      </div>
+      <!-- ============================== -->
+      <!--       form wrapper              -->
+      <!-- ============================== -->
+      <div class="right__container" id="right__container">
+        <!-- form -->
+        <form action="/" id="form">
+          <!-- div for cardholder name input -->
+          <div class="input__div">
+            <!-- label -->
+            <p class="input__label">CARDHOLDER NAME</p>
+            <!-- input for cardholder name -->
+            <input
+              name="cardHolder"
+              class="input"
+              type="text"
+              placeholder="e.g. Jane Appleseed"
+              maxlength="16"
+            />
+            <!-- error message -->
+            <p class="error"></p>
+          </div>
+          <!-- div for card number input -->
+          <div class="input__div">
+            <!-- label -->
+            <p class="input__label">CARD NUMBER</p>
+            <!-- input for card holder name -->
+            <input
+              name="ccNumber"
+              class="input"
+              type="tel"
+              id="cc__number"
+              maxlength="19"
+              placeholder="e.g. 1234 5678 9123 0000"
+            />
+            <!-- error message -->
+            <p class="error"></p>
+          </div>
+
+          <!-- ======================================================================== -->
+          <!-- grid container for adjust expiry month year and cvc number in a line      -->
+          <!-- ========================================================================= -->
+          <div class="input__grid input__div" id="input">
+            <!-- expiry month and year -->
+            <div class="date__input">
+              <!-- a label for expiry manth and year -->
+              <p class="date__label input__label">Exp. Date (MM/YY)</p>
+              <!--dvi for expiry month input -->
+              <div class="cc__month">
+                <input
+                  name="ccMonth"
+                  type="tel"
+                  maxlength="2"
+                  class="input"
+                  placeholder="MM"
+                />
+                <!-- error message -->
+                <p class="error"></p>
+              </div>
+              <!-- div for expiry year input -->
+              <div class="cc__year">
+                <!-- expiry year input -->
+                <input
+                  name="ccYear"
+                  type="tel"
+                  maxlength="2"
+                  class="input"
+                  placeholder="YY"
+                />
+                <!-- error message -->
+                <p class="error"></p>
+              </div>
+            </div>
+            <!-- div for cvc number input-->
+            <div class="cc__cvc">
+              <!-- label for cvc number -->
+              <p class="cvc__label input__label">CVC</p>
+              <!-- input for cvc number -->
+              <input
+                name="cvcNumber"
+                type="tel"
+                maxlength="3"
+                class="input"
+                placeholder="e.g. 123"
+              />
+              <!-- error message -->
+              <p class="error"></p>
+            </div>
+          </div>
+          <!-- =================================== -->
+          <!--         confirm button              -->
+          <!-- =================================== -->
+          <button type="submit" class="confirm__btn">Confirm</button>
+        </form>
+
+        <!-- =================================== -->
+        <!-- complete state  -->
+        <!-- =================================== -->
+        <div class="complete__status" id="complete__stat">
+          <!-- complete state icon  -->
+          <div class="img__div">
+            <img src="./images/icon-complete.svg" alt="complete" srcset="" />
+          </div>
+          <!-- complete states heading -->
+          <h1>THANK YOU!</h1>
+          <!-- complte states description -->
+          <p>We'he added your card details</p>
+          <!-- confirm btn to submit form and add another card details -->
+          <button class="confirm__btn" id="continue__btn">Continue</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
