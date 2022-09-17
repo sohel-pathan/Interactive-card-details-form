@@ -24,8 +24,8 @@
 
 ## Links
 
-- [Solution URL](https://github.com/sohel08/interactive-card-details-form)
-- [Live Site URL](https://interactive-card-details-form23.netlify.app)
+- [Solution URL ](https://github.com/sohel08/interactive-card-details-form)
+- [Live Site URL](https://sohel08.github.io/Interactive-card-details-form/)
 
 ## Built with
 
