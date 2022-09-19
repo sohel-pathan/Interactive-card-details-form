@@ -1,6 +1,4 @@
-// =======================================
-// assign html element by ID to variable
-// =======================================
+// declare var 
 const form = document.getElementById("form");
 const holderName = document.getElementById("cc__name");
 const ccNumber = document.getElementById("cc__number");
@@ -186,3 +184,5 @@ continueBtn.addEventListener("click", () => {
   // hide complete state
   completeStatus.classList.remove("show");
 });
+
+
