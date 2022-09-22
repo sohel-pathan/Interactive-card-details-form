@@ -1,4 +1,6 @@
-/*          default CSS reset           */
+/* ============================= */
+/*          CSS reset            */
+/* ============================= */
 
 /* Box sizing rules */
 *,
@@ -12,7 +14,8 @@ body,
 h1,
 h2,
 h3,
-p {
+p,
+figure {
   margin: 0;
 }
 
@@ -28,10 +31,12 @@ li {
 /* Set core body defaults */
 body {
   min-height: 100vh;
+  line-height: 1.5;
 }
 
 /* Make images easier to work with */
-img {
+img,
+picture {
   max-width: 100%;
   display: block;
 }
@@ -42,10 +47,15 @@ button {
   font: inherit;
 }
 
+/* ============================= */
 /*         css utility  (:      */
+/* ============================= */
+
+/* set 1rem equal to 10px */
 html {
-  font-size: 62.5%;  /* set 1rem equal to 10px */
+  font-size: 62.5%;
 }
+
 body {
   font-size: 1.8rem;
   font-family: "Space Grotesk", sans-serif;
@@ -53,7 +63,6 @@ body {
   position: relative;
 }
 
-/* css variable */
 :root {
   --White: hsl(0, 0%, 100%);
   --Lightgrayishviolet: hsl(270, 3%, 87%);
@@ -62,7 +71,11 @@ body {
   --Red: hsl(0, 100%, 66%);
 }
 
-/* main container  */
+/* ================================= */
+/*          CSS for container        */
+/* ================================= */
+
+/* container  */
 .container {
   max-width: 1440px;
   height: max-content;
@@ -79,17 +92,19 @@ body {
   padding-top: 10px;
 }
 
-/*              form             */
+/* ============================= */
+/*          CSS for form         */
+/* ============================= */
 #form {
   max-width: 410px;
 }
-
-/* form input wrapper */
 .input__div {
   margin-bottom: 8px;
 }
 
-/*      form input       */
+/* ====================================== */
+/*            style form inputs           */
+/* ====================================== */
 .input {
   border: 2px solid var(--Lightgrayishviolet);
   color: var(--Verydarkviolet);
@@ -104,14 +119,17 @@ body {
   border-color: var(--Verydarkviolet);
 }
 
-/*       style for wrong input border      */
+/* ======================================== */
+/*       style for wrong input border       */
+/* =========================================*/
 .input.red,
 .input.red:hover,
 .input.red:focus {
   border-color: var(--Red);
 }
-
-/*    input error msg     */
+/* ========================== */
+/*    style for error msg     */
+/* ========================== */
 .error {
   height: 20px;
   font-size: 1rem;
@@ -122,8 +140,9 @@ body {
   font-size: 1.3rem;
   transition: 0.25s;
 }
-
-/*    form input label   */
+/* ========================== */
+/*    style for input label   */
+/* ========================== */
 .input__label {
   letter-spacing: 1px;
   font-size: 1.6rem;
@@ -131,7 +150,9 @@ body {
   color: var(--Verydarkviolet);
 }
 
-/*    button       */
+/* ========================= */
+/*    style for button       */
+/* ========================= */
 .confirm__btn {
   margin-top: 10px;
   width: 100%;
@@ -167,39 +188,49 @@ body {
   grid-column-end: 3;
 }
 
-/* card and card details */
+/* ==================================== */
+/*             CSS for cards            */
+/* ==================================== */
 
-/*     style for card image wrapper    */
+/* ==================================== */
+/*     style for card image wrapper    * /
+/* ==================================== */
 .cc__img_container {
   position: relative;
   width: 400px;
   color: var(--White);
 }
-/* card front */
+
+/* ============================================ */
+/*    style for both cards div front or back    */
+/* ============================================ */
 .cc__front {
   right: 30px;
   bottom: 20px;
   top: 5px;
 }
-/* card back */
 .cc__back {
   left: 30px;
   top: 20px;
 }
 
+/* ==================================== */
 /*     style for text on the cards      */
+/* ==================================== */
 .p__absolute {
   position: absolute;
   font-size: 1.6rem;
 }
-
+/* ==================================== */
 /*             card logo                */
+/* ==================================== */
 .cc__branding {
   top: 8%;
   left: 7%;
 }
-
+/* ==================================== */
 /*             card numbert             */
+/* ==================================== */
 .cc__number {
   top: 50%;
   left: 6%;
@@ -207,7 +238,9 @@ body {
   letter-spacing: 2px;
 }
 
+/* =================================== */
 /*         card holder name            */
+/* ==================================== */
 .cc__holder {
   bottom: 8%;
   left: 6%;
@@ -215,49 +248,63 @@ body {
   letter-spacing: 2px;
 }
 
+/* =================================== */
 /*  card expiry date year and month    */
+/* =================================== */
 .cc__date {
   bottom: 8%;
   right: 6%;
 }
-
+/* =================================== */
 /*        card cvc number              */
+/* =================================== */
 .cvc__number {
   top: 44%;
   right: 11%;
   letter-spacing: 2px;
 }
 
-/*            complete states                   */
-.complete__status.show {
-  transition: 0.25s;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 410px;
+/* ==================== */
+/*     MEDIA QUERIES    */
+/* ==================== */
+@media (max-width: 950px) {
+  /* =================================== */
+  /*          main caontainer            */
+  /* =================================== */
+  .container {
+    background-position: top;
+    background-size: 100% 35%;
+    flex-direction: column;
+  }
+
+  /* =================================== */
+  /*         card image wrapper          */
+  /* =================================== */
+  .cc__img_container {
+    width: 360px;
+  }
+
+  /* =================================== */
+  /*        card front sight             */
+  /* =================================== */
+  .cc__front {
+    top: 140px;
+    z-index: 9999;
+    right: 35px;
+  }
+
+  /* =================================== */
+  /*        card back sight              */
+  /* =================================== */
+  .cc__back {
+    top: -180px;
+    left: 35px;
+  }
 }
 
-/*      complete states complete icon div       */
-.complete__status .img__div {
-  width: 70px;
-  margin-bottom: 20px;
-}
-
-/*          complete states heading             */
-.complete__status h1 {
-  padding-bottom: 10px;
-  color: var(--Verydarkviolet);
-  font-weight: 500;
-}
-
-/*          complete states paragraph           */
-.complete__status p {
-  padding-bottom: 30px;
-  color: var(--Darkgrayishviolet);
-}
-
-/*        css to hide and show form or complete  stat      */
+/* ==================================== */
+/*           style for javascript       */
+/* ==================================== */
 .display__none {
   display: none;
 }
@@ -265,43 +312,69 @@ body {
 .complete__status {
   display: none;
 }
+/* ============================================ */
+/*            complete states                   */
+/* ============================================ */
+.complete__status.show {
+  transition: 0.25s;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 400px;
+}
 
+/* ============================================ */
+/*      complete states complete icon div       */
+/* ============================================ */
+.complete__status .img__div {
+  width: 70px;
+  margin-bottom: 20px;
+}
 
-/*     MEDIA QUERIES    */
-@media (max-width: 950px) {
-  .container {
-    min-height: 100%;
-    background-position: top;
-    background-size: 100% 35%;
-    flex-direction: column;
-  }
-  .cc__img_container {
-    width: 360px;
-  }
-  .cc__front {
-    top: 140px;
-    z-index: 9999;
-    right: 35px;
-  }
-  .cc__back {
-    top: -180px;
-    left: 35px;
-  }
+/* ============================================ */
+/*          complete states heading             */
+/* ============================================ */
+.complete__status h1 {
+  padding-bottom: 10px;
+  color: var(--Verydarkviolet);
+  font-weight: 500;
+}
+
+/* ============================================ */
+/*          complete states paragraph           */
+/* ============================================ */
+.complete__status p {
+  padding-bottom: 30px;
+  color: var(--Darkgrayishviolet);
 }
 
 @media (max-width: 500px) {
+  /* =================================== */
+  /*           main container            */
+  /* =================================== */
   .container {
     background-size: 100% 35%;
   }
+
+  /* =================================== */
+  /*              form                   */
+  /* =================================== */
   #form {
-    max-width: 330px;
+    max-width: 345px;
   }
-  .complete__status.show {
-  width: 330px;
+
+  .complete__status.show{
+    width: 345px;
   }
+  
+  /* =================================== */
+  /*        card image wrapper           */
+  /* =================================== */
   .cc__img_container {
     width: 300px;
   }
+
   .cc__front {
     top: 125px;
     right: 25px;
@@ -310,16 +383,39 @@ body {
     top: -150px;
     left: 25px;
   }
+
+  /* =================================== */
+  /*        card branding logo           */
+  /* =================================== */
   .cc__branding {
-    width: 75px;
+    width: 20px;
   }
+
+  /* =================================== */
+  /*                cvc number           */
+  /* =================================== */
   .cvc__number {
     top: 40%;
     font-size: 2rem;
     letter-spacing: 0;
   }
+  /* ==================================== */
+  /*             card numbert             */
+  /* ==================================== */
   .cc__number {
     font-size: 2.2rem;
     letter-spacing: 0;
+  }
+}
+
+/*very small size */
+@media (max-width: 360px) {
+  .cc__front {
+    top: 125px;
+    right: 10px;
+  }
+  .cc__back {
+    top: -150px;
+    left: 10px;
   }
 }
