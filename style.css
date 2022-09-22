@@ -352,14 +352,3 @@ html {
   }
 }
 
-/*very small size */
-@media (max-width: 360px) {
-  .cc__front {
-    top: 125px;
-    right: 10px;
-  }
-  .cc__back {
-    top: -150px;
-    left: 10px;
-  }
-}
