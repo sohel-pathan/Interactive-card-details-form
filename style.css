@@ -10,25 +10,12 @@
 /* Remove default margin */
 body,
 h1,
-h2,
-h3,
-p,
-figure {
+p{
   margin: 0;
-}
-
-/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ol,
-ul,
-li {
-  list-style: none;
-  margin: 0;
-  padding: 0;
 }
 
 /* Make images easier to work with */
-img,
-picture {
+img{
   max-width: 100%;
   display: block;
 }
