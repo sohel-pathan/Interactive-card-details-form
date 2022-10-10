@@ -52,8 +52,6 @@ html {
 
 /* container  */
 .container {
-  max-width: 1440px;
-  height: max-content;
   min-height: 100vh;
   background-image: url("./images/bg-main-desktop.png");
   background-repeat: no-repeat;
@@ -219,7 +217,7 @@ html {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 410px;
+  max-width: 410px;
 }
 
 /*      complete states complete icon div*/
