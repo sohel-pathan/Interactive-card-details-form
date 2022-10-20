@@ -1,4 +1,4 @@
-// declare var 
+// declare variable
 const form = document.getElementById("form");
 const holderName = document.getElementById("cc__name");
 const ccNumber = document.getElementById("cc__number");
@@ -10,14 +10,14 @@ const completeStatus = document.getElementById("complete__stat");
 
 // deafault card details
 const defaultCardDeatails = () => {
-  holderName.textContent = "jane appleseed"
-  ccNumber.textContent = "0000 0000 0000 0000"
-  ccExpMonth.textContent = "00"
-  ccExpYear.textContent = "00"
-  cvcNumber.textContent = "000"
-}
-// set default card details 
-defaultCardDeatails()
+  holderName.textContent = "jane appleseed";
+  ccNumber.textContent = "0000 0000 0000 0000";
+  ccExpMonth.textContent = "00";
+  ccExpYear.textContent = "00";
+  cvcNumber.textContent = "000";
+};
+// set default card details
+defaultCardDeatails();
 
 // Input Event listner on form
 form.addEventListener("input", (e) => {
@@ -38,9 +38,10 @@ form.addEventListener("input", (e) => {
     // let formattedCardNumber = numberOnly(cardNumber)
     let formattedCardNumber = cardNumber.replace(/\D/g, "");
 
-    // Split the card numbers into 4 seprate group in a input
+    // Split the card numbers into 4 seprate group store as a array
     let cardNumberSections = cardNumber.match(/\d{1,4}/g);
 
+    console.log(typeof cardNumberSections);
     // join 4 group of card with " " and store in formattedCardNumber
     if (cardNumberSections !== null) {
       formattedCardNumber = cardNumberSections.join(" ");
@@ -125,9 +126,9 @@ form.addEventListener("submit", (e) => {
   }
 
   // check card number
-  if(cardNumber.value.length < 1){
+  if (cardNumber.value.length < 1) {
     setError(cardNumber, "Can't be blank");
-  }else if (cardNumber.value.length < 19) {
+  } else if (cardNumber.value.length < 19) {
     setError(cardNumber, "Card number must be 16 digit");
   } else {
     setSuccess(cardNumber);
@@ -147,8 +148,8 @@ form.addEventListener("submit", (e) => {
   // check card expiry year
   if (cardYear.value < 1) {
     setError(cardYear, "Can't be blank");
-  }else{
-   setSuccess(cardYear);
+  } else {
+    setSuccess(cardYear);
     input++;
   }
 
@@ -169,20 +170,18 @@ form.addEventListener("submit", (e) => {
     // show complete states
     completeStatus.classList.add("show");
     // reset form
-    form.reset()
+    form.reset();
   }
 });
 
 // contiue button for complete state
 continueBtn.addEventListener("click", () => {
-  // set default card details 
-  defaultCardDeatails()
-  
+  // set default card details
+  defaultCardDeatails();
+
   // show form
   form.classList.remove("display__none");
-  
+
   // hide complete state
   completeStatus.classList.remove("show");
 });
-
-
