@@ -27,49 +27,43 @@ form.addEventListener("input", (e) => {
 
   // cardHolder name
   if (target === form["cardHolder"]) {
-    holderName.innerHTML = target.value;
-  }
+    return (holderName.innerText = target.value);
+  } else {
+    // only number
+    let formattedNumber = target.value.replace(/\D/g, "");
+    // card number
+    if (target === form["ccNumber"]) {
+      // Split the card numbers into 4 group in cardNumberSections as array
+      let cardNumberSections = formattedNumber.match(/\d{1,4}/g);
 
-  // card number
-  if (target === form["ccNumber"]) {
-    // enter only 0-9
-    let formattedCardNumber = target.value.replace(/\D/g, "");
-
-    // Split the card numbers into 4 gruopu as a array
-    let cardNumberSections = formattedCardNumber.match(/\d{1,4}/g);
-
-    // join 4 group of cardNumberSections with " " in formattedCardNumber
-    if (cardNumberSections !== null) {
-      formattedCardNumber = cardNumberSections.join(" ");
+      // join group of cardNumberSections with join
+      if (cardNumberSections !== null) {
+        formattedNumber = cardNumberSections.join(" ");
+      }
+      // update number on card
+      ccNumber.textContent = formattedNumber;
     }
 
-    // formattedCardNumber number in input
-    target.value = formattedCardNumber;
+    // expiry month
+    if (target === form["ccMonth"]) {
+      formattedNumber.length < 2
+        ? (ccExpMonth.textContent = "0" + formattedNumber)
+        : (ccExpMonth.textContent = formattedNumber);
+    }
 
-    // update card number on card
-    ccNumber.textContent = formattedCardNumber;
-  }
+    // expiry year
+    if (target === form["ccYear"]) {
+      formattedNumber.length < 2
+        ? (ccExpYear.textContent = "0" + formattedNumber)
+        : (ccExpYear.textContent = formattedNumber);
+    }
 
-  // expiry month
-  if (target === form["ccMonth"]) {
-    target.value = target.value.replace(/\D/g, "");
-    target.value.length < 2
-      ? (ccExpMonth.textContent = "0" + target.value)
-      : (ccExpMonth.textContent = target.value);
-  }
-
-  // expiry year
-  if (target === form["ccYear"]) {
-    target.value = target.value.replace(/\D/g, "");
-    target.value.length < 2
-      ? (ccExpYear.textContent = "0" + target.value)
-      : (ccExpYear.textContent = target.value);
-  }
-
-  // cvc number
-  if (target === form["cvcNumber"]) {
-    target.value = target.value.replace(/\D/g, "");
-    cvcNumber.textContent = target.value;
+    // cvc number
+    if (target === form["cvcNumber"]) {
+      cvcNumber.textContent = formattedNumber;
+    }
+    // formattedNumber number in input
+    return (target.value = formattedNumber);
   }
 });
 

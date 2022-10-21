@@ -1,5 +1,4 @@
 /*   CSS reset     */
-
 /* Box sizing rules */
 *,
 *::before,
@@ -16,7 +15,7 @@ p {
 
 /* Make images easier to work with */
 img {
-  max-width: 100%;
+  width: 100%;
   display: block;
 }
 
@@ -105,7 +104,7 @@ html {
 
 /*    style for error msg     */
 .error {
-  height: 20px;
+  min-height: 20px;
   font-size: 1rem;
 }
 
@@ -124,7 +123,7 @@ html {
 }
 
 /*    style for button*/
-.confirm__btn {
+.button {
   margin-top: 10px;
   width: 100%;
   padding: 10px;
@@ -187,7 +186,6 @@ html {
 /*     style for text on the cards      */
 .p__absolute {
   position: absolute;
-  font-size: 1.6rem;
 }
 
 /*      card logo  */
@@ -221,7 +219,7 @@ html {
 
 /* card cvc number*/
 .cvc__number {
-  top: 44%;
+  top: 43%;
   right: 11%;
 }
 
@@ -293,25 +291,23 @@ html {
   .left__container {
     justify-content: center;
     padding-inline: 20px;
-    width: 100%;
     background-image: url(./images/bg-main-mobile.png);
     background-repeat: no-repeat;
     background-size: 100% 65%;
     background-position: cover;
   }
 
+  /* card*/
   .card__container {
     display: flex;
     flex-direction: column-reverse;
   }
 
-  /* card front sight      */
   .cc__front {
     z-index: 99;
     left: -10px;
     top: -50px;
   }
-  /* card back sight*/
   .cc__back {
     left: 10px;
   }
@@ -319,14 +315,18 @@ html {
 
 @media (max-width: 400px) {
   .cvc__number {
-    top: 43%;
+    top: 42%;
   }
   .cc__number {
-    font-size: 2rem;
+    font-size: 2.1rem;
   }
 }
+
 @media (max-width: 350px) {
   .mmyy {
     display: none;
+  }
+  .cc__number {
+    font-size: 1.8rem;
   }
 }
