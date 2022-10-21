@@ -10,12 +10,12 @@
 /* Remove default margin */
 body,
 h1,
-p{
+p {
   margin: 0;
 }
 
 /* Make images easier to work with */
-img{
+img {
   max-width: 100%;
   display: block;
 }
@@ -33,7 +33,11 @@ body {
   font-size: 1.8rem;
   font-family: "Space Grotesk", sans-serif;
   font-weight: 500;
-  position: relative;
+  background-image: url("./images/bg-main-desktop.png");
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: 35% 100%;
+  background-color: var(--White);
 }
 
 html {
@@ -48,30 +52,36 @@ html {
   --Red: hsl(0, 100%, 66%);
 }
 
-/*   CSS for container */
-
 /* container  */
 .container {
+  max-width: 1200px;
   min-height: 100vh;
-  background-image: url("./images/bg-main-desktop.png");
-  background-repeat: no-repeat;
-  background-position: left;
-  background-size: 35% 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  background-color: var(--White);
+  margin: auto;
+  display: grid;
+  column-gap: 50px;
+  place-items: center;
+  grid-template-columns: 1fr 1fr;
 }
 
 /*   CSS for form  */
+.right__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding-right: 15px;
+}
+
 #form {
   max-width: 410px;
+  width: 100%;
 }
+
+/*     style form inputs    */
 .input__div {
   margin-bottom: 8px;
 }
 
-/*     style form inputs    */
 .input {
   border: 2px solid var(--Lightgrayishviolet);
   color: var(--Verydarkviolet);
@@ -150,21 +160,28 @@ html {
 /*      CSS for cards     */
 
 /*     style for card image wrapper    */
+.left__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding-left: 15px;
+}
+
 .cc__img_container {
   position: relative;
-  width: 400px;
+  max-width: 400px;
+  width: 100%;
   color: var(--White);
 }
 
 /*    style for both cards div front or back    */
 .cc__front {
-  right: 30px;
-  bottom: 20px;
-  top: 5px;
+  left: 0px;
 }
 .cc__back {
   left: 30px;
-  top: 20px;
+  top: 15px;
 }
 
 /*     style for text on the cards      */
@@ -206,40 +223,36 @@ html {
 .cvc__number {
   top: 44%;
   right: 11%;
-  letter-spacing: 2px;
 }
-
 
 /*     complete states     */
 .complete__status.show {
-  transition: 0.25s;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   max-width: 410px;
+  width: 100%;
 }
 
 /*      complete states complete icon div*/
-.complete__status .img__div {
-  width: 70px;
-  margin-bottom: 20px;
+.complete__status.show .img__div {
+  width: 80px;
+  margin-bottom: 25px;
 }
 
 /*   complete states heading      */
-.complete__status h1 {
-  padding-bottom: 10px;
+.complete__status.show h1 {
+  padding-bottom: 15px;
   color: var(--Verydarkviolet);
   font-weight: 500;
 }
 
 /*   complete states paragraph    */
-.complete__status p {
-  padding-bottom: 30px;
+.complete__status.show p {
+  padding-bottom: 35px;
   color: var(--Darkgrayishviolet);
 }
-
-
 
 /*    style for mainpulate DOM with javascript */
 .display__none {
@@ -250,90 +263,70 @@ html {
 }
 
 /*     MEDIA QUERIES    */
+@media (max-width: 1010px) {
+  .right__container {
+    justify-content: flex-end;
+  }
+  .left__container {
+    justify-content: flex-start;
+  }
+}
 
-@media (max-width: 950px) {
-
+@media (max-width: 785px) {
+  body {
+    background-image: none;
+  }
   /*   main caontainer     */
   .container {
+    display: flex;
     flex-direction: column;
     justify-content: flex-start;
     background-image: none;
   }
 
-  #form {
-    padding-bottom: 10px;
+  .right__container {
+    justify-content: center;
+    padding-inline: 10px;
+    padding-bottom: 20px;
   }
 
-  /*  card image wrapper   */
-  .cc__img_container {
-    width: 360px;
-  }
-
-/* left container is card container */
   .left__container {
+    justify-content: center;
+    padding-inline: 20px;
     width: 100%;
-    display: grid;
-    place-items: center;
     background-image: url(./images/bg-main-mobile.png);
     background-repeat: no-repeat;
     background-size: 100% 65%;
     background-position: cover;
   }
 
+  .card__container {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
   /* card front sight      */
   .cc__front {
-    top: 140px;
-    z-index: 9999;
-    right: 35px;
+    z-index: 99;
+    left: -10px;
+    top: -50px;
   }
-
   /* card back sight*/
   .cc__back {
-    top: -180px;
-    left: 35px;
+    left: 10px;
   }
 }
 
-@media (max-width: 500px) {
-  /*form     */
-  #form {
-    max-width: 345px;
-  }
-
-  .complete__status.show {
-    width: 345px;
-  }
-
-  /* card image wrapper    */
-  .cc__img_container {
-    width: 310px;
-  }
-
-  .cc__front {
-    top: 125px;
-    right: 20px;
-  }
-  .cc__back {
-    top: -150px;
-    left: 15px;
-  }
-
-  /* card branding logo    */
-  .cc__branding {
-    width: 80px;
-  }
-
-  /*  cvc number    */
+@media (max-width: 400px) {
   .cvc__number {
-    top: 40%;
-    font-size: 2rem;
-    letter-spacing: 0;
+    top: 43%;
   }
-
-  /*      card numbert      */
   .cc__number {
-    font-size: 2.2rem;
-    letter-spacing: 0;
+    font-size: 2rem;
   }
 }
-
+@media (max-width: 350px) {
+  .mmyy {
+    display: none;
+  }
+}

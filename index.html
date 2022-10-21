@@ -21,7 +21,7 @@
     <!-- Style__Sheet -->
     <link rel="stylesheet" href="./style.css" />
     <!-- javascript -->
-    <script defer src="./newScript.js"></script>
+    <script defer src="./script.js"></script>
     <!-- title -->
     <title>Frontend Mentor | Interactive card details form</title>
   </head>
@@ -31,35 +31,40 @@
       <!-- left__container for cards and cardholder details -->
       <div class="left__container">
         <!-- card front image and details -->
-        <div class="cc__front cc__img_container">
-          <!-- card front image -->
-          <img class="card" src="./images/bg-card-front.png" alt="" />
-          <!-- card branding logo -->
-          <div class="p__absolute cc__branding">
-            <img src="./images/card-logo.svg" alt="" srcset="" />
+        <div class="card__container">
+          <div class="cc__front cc__img_container">
+            <!-- card front image -->
+            <img
+              class="card"
+              src="./images/bg-card-front.png"
+              alt=" card_front"
+            />
+            <!-- card branding logo -->
+            <div class="p__absolute cc__branding">
+              <img src="./images/card-logo.svg" alt="card_logo" srcset="" />
+            </div>
+            <!-- card holder name -->
+            <div class="p__absolute cc__holder">
+              <p id="cc__name"></p>
+            </div>
+            <!-- card number -->
+            <div class="p__absolute cc__number">
+              <p id="cc__number"></p>
+            </div>
+            <!-- card expiry date and month -->
+            <div class="p__absolute cc__date">
+              <p>
+                <span id="cc__exp_month"></span>/<span id="cc__exp_year"></span>
+              </p>
+            </div>
           </div>
-          <!-- card holder name -->
-          <div class="p__absolute cc__holder">
-            <p id="cc__name"></p>
-          </div>
-          <!-- card number -->
-          <div class="p__absolute cc__number">
-            <p id="cc__number"></p>
-          </div>
-          <!-- card expiry date and month -->
-          <div class="p__absolute cc__date">
-            <p>
-              <span id="cc__exp_month"></span>/
-              <span id="cc__exp_year"></span>
-            </p>
-          </div>
-        </div>
-        <!--     card back image and cvc number   -->
-        <div class="cc__back cc__img_container">
-          <img class="card" src="./images/bg-card-back.png" alt="" />
-          <!-- card cvc number -->
-          <div class="p__absolute cvc__number">
-            <p id="cvc__number"></p>
+          <!--     card back image and cvc number   -->
+          <div class="cc__back cc__img_container">
+            <img class="card" src="./images/bg-card-back.png" alt="card_back" />
+            <!-- card cvc number -->
+            <div class="p__absolute cvc__number">
+              <p id="cvc__number"></p>
+            </div>
           </div>
         </div>
       </div>
@@ -106,7 +111,9 @@
             <!-- expiry month and year -->
             <div class="date__input">
               <!-- a label for expiry manth and year -->
-              <p class="date__label input__label">Exp. Date (MM/YY)</p>
+              <p class="date__label input__label">
+                Exp. Date <span class="mmyy">(MM/YY)</span>
+              </p>
               <!--dvi for expiry month input -->
               <div class="cc__month">
                 <input
